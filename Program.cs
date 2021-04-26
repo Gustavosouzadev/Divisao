@@ -51,9 +51,9 @@ namespace Divisao
                 }
                     else
                     {
-                    int Resultado = Numerador / Denominador;
+                        int Resultado = Numerador / Denominador;
 
-                    Console.Write($"\n {Numerador} dividido por {Denominador} é {Resultado}.");
+                        Console.Write($"\n {Numerador} dividido por {Denominador} é {Resultado}.");
                     }
             Console.ResetColor();
         }
