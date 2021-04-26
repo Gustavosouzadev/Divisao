@@ -32,7 +32,7 @@ namespace Divisao
             QuantidadeDigitada = Console.ReadLine();
             NumeroValido = Int32.TryParse(QuantidadeDigitada, out Denominador);
             
-            if (!NumeroValido2)
+            if (!NumeroValido2 || !NumeroValido)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.Write("\nERROR: ");
@@ -40,35 +40,21 @@ namespace Divisao
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("Só dividimos Números.");
             }
-            else
-            {  
-                if (!NumeroValido)
+            else if (Denominador == 0)
                 {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.Write("\nERROR: ");
-
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Write("Só Dividimos Números.");
-                }
-                else
-                {
-                    if (Denominador == 0)
-                    {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.Write("\nERROR: ");
 
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write("Não é possível dividir por zero.");
                     Environment.Exit(-1);
-                    }
+                }
                     else
                     {
                     int Resultado = Numerador / Denominador;
 
                     Console.Write($"\n {Numerador} dividido por {Denominador} é {Resultado}.");
                     }
-                }    
-            }            
             Console.ResetColor();
         }
     }
